@@ -1,0 +1,2 @@
+segurtasuna/OrdezkatzeHiztegia.java
+ segurtasuna.OrdezkatzeHiztegia
