@@ -6,15 +6,14 @@ public class OrdezkatzeHiztegia {
     private String hiztegia = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public String zifratu(String mezua) {
-        mezua.toUpperCase();
         int it = 0;
         boolean aurkitua = false;
-        String gakosekretu=null;
+        StringBuilder gakosekretu= new StringBuilder();
         char hizkisekretua;
         for (int i = 0; i < mezua.length(); i++) {
             char hizkia = mezua.charAt(i);
             while (it < hiztegia.length() && !aurkitua) {
-                char aux = hiztegia.charAt(i);
+                char aux = hiztegia.charAt(it);
                 if (aux == hizkia) {
                     aurkitua = true;
                 } else {
@@ -25,23 +24,24 @@ public class OrdezkatzeHiztegia {
                 hizkisekretua = gakoa.charAt(it);
                 aurkitua=false;
             }
-            hizkisekretua= ' ';
-            gakosekretu = gakosekretu + hizkisekretua;
+            else {
+                hizkisekretua = ' ';
+            }
+            gakosekretu.append(hizkisekretua);
             it=0;
         }
-        return gakosekretu;
+        return gakosekretu.toString();
     }
 
     public String deszifratu(String kripto){
-        kripto.toUpperCase();
         int it = 0;
         boolean aurkitua = false;
-        String gakosekretua=null;
+        StringBuilder gakosekretua= new StringBuilder();
         char hizkisekretua;
         for (int i = 0; i < kripto.length(); i++) {
             char hizkia = kripto.charAt(i);
             while (it < gakoa.length() && !aurkitua) {
-                char aux = gakoa.charAt(i);
+                char aux = gakoa.charAt(it);
                 if (aux == hizkia) {
                     aurkitua = true;
                 } else {
@@ -52,11 +52,13 @@ public class OrdezkatzeHiztegia {
                 hizkisekretua = hiztegia.charAt(it);
                 aurkitua=false;
             }
-            hizkisekretua= ' ';
-            gakosekretua = gakosekretua + hizkisekretua;
+            else {
+                hizkisekretua = ' ';
+            }
+            gakosekretua.append(hizkisekretua);
             it=0;
         }
-        return gakosekretua;
+        return gakosekretua.toString();
     }
 }
 
