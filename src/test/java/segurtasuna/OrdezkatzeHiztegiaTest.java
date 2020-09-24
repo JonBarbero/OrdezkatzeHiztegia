@@ -23,4 +23,6 @@ public class OrdezkatzeHiztegiaTest extends TestCase {
                         ordezkatzeHiztegia.zifratu("EZ GAUDE GERRAREN ALDE")));
 
     }
+
+    //JUnit biak ondo egiten ditu
 }
