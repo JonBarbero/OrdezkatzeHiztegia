@@ -9,7 +9,7 @@ public class OrdezkatzeHiztegia {
         mezua.toUpperCase();
         int it = 0;
         boolean aurkitua = false;
-        String gakosekretua=null;
+        String gakosekretu=null;
         char hizkisekretua;
         for (int i = 0; i < mezua.length(); i++) {
             char hizkia = mezua.charAt(i);
@@ -23,11 +23,13 @@ public class OrdezkatzeHiztegia {
             }
             if (aurkitua){
                 hizkisekretua = gakoa.charAt(it);
+                aurkitua=false;
             }
             hizkisekretua= ' ';
-            gakosekretua = gakosekretua + "" + hizkisekretua;
+            gakosekretu = gakosekretu + hizkisekretua;
+            it=0;
         }
-        return gakosekretua;
+        return gakosekretu;
     }
 
     public String deszifratu(String kripto){
@@ -48,9 +50,11 @@ public class OrdezkatzeHiztegia {
             }
             if (aurkitua){
                 hizkisekretua = hiztegia.charAt(it);
+                aurkitua=false;
             }
             hizkisekretua= ' ';
-            gakosekretua = gakosekretua + "" + hizkisekretua;
+            gakosekretua = gakosekretua + hizkisekretua;
+            it=0;
         }
         return gakosekretua;
     }
